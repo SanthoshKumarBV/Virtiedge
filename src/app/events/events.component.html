@@ -29,23 +29,16 @@
                       <div class="card">
                         <div class="card-block">
                           <form>
-
-                            <select name="eventType">
+                            <select name="courseType" [(ngModel)]="courseType">
                               <option value="all">
                                 All Courses
                               </option>
-                              <option value="classroom">
-                                Class Room
-                              </option>
-                              <option value="online">
-                                Online
-                              </option>
-                              <option value="self">
-                                Self Learning
+                              <option *ngFor="let course of courses" value="{{course.course_id_pk}}">
+                                {{course.course_title}}
                               </option>
                             </select>
 
-                            <select name="eventType">
+                            <select name="eventType" [(ngModel)]="eventType">
                               <option value="all">
                                 All Event Types
                               </option>
@@ -60,21 +53,24 @@
                               </option>
                             </select>
 
-                            <select name="eventLocation">
+                            <select name="eventLocation" [(ngModel)]="eventLocation">
                               <option value="all">
                                 All Locations
                               </option>
-                              <option value="india">
+                              <option value="India">
                                 India
                               </option>
-                              <option value="aususa">
+                              <option value="Australia">
                                 Australia
                               </option>
-                              <option value="self">
+                              <option value="USA">
                                 USA
                               </option>
+                              <option value="UK">
+                                UK
+                              </option>
                             </select>
-                            <button>Search Events</button>
+                            <button (click)="searchEvents()">Search Events</button>
                           </form>
                         </div>
                       </div>

@@ -33,6 +33,7 @@ export class CourseDetailComponent implements OnInit {
   }
 
   getCourses(courseid) {
+    window.scroll(0, 0);
     this.courseDetailsService.getCoursDetails(courseid)
       .subscribe((response) => {
         this.courseDetails = response['courseDetails']['data']['0'];

@@ -1,7 +1,6 @@
-<br>
-<br>
-<br>
-<br>
+<div class="container" [scrollTop]="scrollTop">
+  
+    <div class="page-container">
 <div class="page-content-wrapper">
   <div class="content sm-gutter">
     <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
@@ -33,10 +32,10 @@
                       <div class="col-12">
                         <ul class="nav nav-tabs nav-tabs-simple" role="tablist" data-init-reponsive-tabs="dropdownfx">
                           <li class="nav-item">
-                            <a data-href="#youGet" class="active bold js-scroll-trigger">You Get</a>
+                            <a href="#youGet" target="_self" class="active bold js-scroll-trigger">You Get</a>
                           </li>
                           <li class="nav-item">
-                            <a data-href="#schedules" class="bold js-scroll-trigger">Schedules</a>
+                            <a data-toggle="tab" href="#schedules" target="_self" class="bold js-scroll-trigger">Schedules</a>
                           </li>
                           <li class="nav-item">
                             <a data-href="#description" class="bold js-scroll-trigger">Course Description</a>
@@ -103,7 +102,7 @@
                               <p>Virtiledge’s corporate training solutions is custom designed to help professionals keep ahead
                                 in fast growing business atmospheres.
                               </p>
-                              <a href="javascript:;" class="btn btn-primary m-t-20">Contact Us</a>
+                              <a href="#corporate-training" class="btn btn-primary m-t-20">Contact Us</a>
                             </div>
                           </div>
                         </div>
@@ -124,7 +123,6 @@
                         <table class="table" id="tableWithSearch">
                           <thead>
                             <tr>
-                              <th>Course Category</th>
                               <th>Course</th>
                               <th>Course Type</th>
                               <th>Workshop Date</th>
@@ -134,9 +132,6 @@
                           </thead>
                           <tbody>
                             <tr *ngFor="let event of eventDetails">
-                              <td class="v-align-middle ">
-                                <p>{{event.cc_name}}</p>
-                              </td>
                               <td class="v-align-middle">
                                 <p>{{event.course_title}}</p>
                               </td>
@@ -144,7 +139,7 @@
                                 <p>{{event.event_type}}</p>
                               </td>
                               <td class="v-align-middle">
-                                <p style="color: green">{{event.event_from_date}} <br> -  {{event.event_to_date}}</p>
+                                <p style="color: green">{{event.event_from_date | date:'dd MMM yyyy'}} 
                               </td>
                               <td class="v-align-middle">
                                 
@@ -407,4 +402,6 @@
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
